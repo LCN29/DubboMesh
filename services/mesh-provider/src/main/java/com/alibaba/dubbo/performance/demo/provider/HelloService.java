@@ -4,8 +4,6 @@ package com.alibaba.dubbo.performance.demo.provider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Random;
-
 public class HelloService implements IHelloService {
 
     private long count;
@@ -20,9 +18,8 @@ public class HelloService implements IHelloService {
     public int hash(String str) throws Exception {
         String salt = System.getProperty("salt");
         int hashCode = (str + salt).hashCode();
-        logger.info(++count + "_" + hashCode);
+        logger.info("Provider处理次数----------->{}, 返回结果为--------->{}", ++count, hashCode);
         sleep(50);
-
         return hashCode;
     }
 

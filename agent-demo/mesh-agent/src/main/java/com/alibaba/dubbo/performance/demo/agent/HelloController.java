@@ -48,6 +48,7 @@ public class HelloController {
     public byte[] provider(String interfaceName,String method,String parameterTypesString,String parameter) throws Exception {
 
         Object result = rpcClient.invoke(interfaceName,method,parameterTypesString,parameter);
+        logger.info("Provider正在处理消息------------>");
         return (byte[]) result;
     }
 
@@ -66,6 +67,8 @@ public class HelloController {
 
         String url =  "http://" + endpoint.getHost() + ":" + endpoint.getPort();
 
+        logger.info("请求的链接为-------->{}", url);
+
         RequestBody requestBody = new FormBody.Builder()
                 .add("interface",interfaceName)
                 .add("method",method)
@@ -82,6 +85,7 @@ public class HelloController {
             if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
             byte[] bytes = response.body().bytes();
             String s = new String(bytes).trim();
+            logger.info("Consumer接收到的结果为------>{}", s);
             return Integer.valueOf(s);
         }
     }
