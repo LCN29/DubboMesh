@@ -17,6 +17,7 @@
 
 
 ## 4. 配置agent-demo的Provider-Agent和Consumer-Agent的启动参数
+
 |  		| JVM启动参数|
 | ：-： | ：- ： |
 | consumer_agent  | -Dtype=consumer -Dserver.port=20000 -Dlogs.dir=/yourLogPath|
