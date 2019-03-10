@@ -8,8 +8,8 @@
 
 ## 3. 配置services中的Provider和Consumer的启动参数
 
-|  		| JVM启动参数|
-| ：-： | ：- ： |
+|  		 | JVM启动参数|
+| :-: | :-: |
 | consumer        | -Xms1536M -Xmx1536M -Dtype=consumer -Dserver.port=20000 -Detcd.url=http://127.0.0.1:2379 -Dlogs.dir=/yourLogPath|
 | small_provider  | -Xms512M  -Xmx512M  -Dtype=provider -Dserver.port=30000 -Ddubbo.protocol.port=20889 -Detcd.url=http://127.0.0.1:2379 -Dlogs.dir=/yourLogPath|
 | medium_provider | -Xms1536M -Xmx1536M -Dtype=provider -Dserver.port=30001 -Ddubbo.protocol.port=20890 -Detcd.url=http://127.0.0.1:2379 -Dlogs.dir=/yourLogPath|
@@ -19,7 +19,7 @@
 ## 4. 配置agent-demo的Provider-Agent和Consumer-Agent的启动参数
 
 |  		| JVM启动参数|
-| ：-： | ：- ： |
+| :-: | :-: |
 | consumer_agent  | -Dtype=consumer -Dserver.port=20000 -Dlogs.dir=/yourLogPath|
 | provider_agent  | -Dtype=provider -Dserver.port=30000 -Ddubbo.protocol.port=20889 -Dlogs.dir=/yourLogPath|
 
